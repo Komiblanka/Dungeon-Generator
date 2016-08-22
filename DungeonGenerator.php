@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<HEAD>
+<TITLE>Dungeon Generator</TITLE>
+</HEAD>
+<BODY>
 <?php
 
 function CheckTable($Table){
@@ -16,11 +22,11 @@ class Area{
 		$this->MainGenerator();
 	}
 	public function Print_Area(){
-		echo "<CR>AREA:<CR>=====<CR>";
-		echo "Themed: " . $this->Themed . "<CR>";
-		echo "Rarity: " . $this->Rarity . "<CR>";
-		echo "Discovery: \n\t" . $this->Discovery . <CR>";
-		echo "Danger: \n\t" . $this->Danger . "<CR>";
+		echo "<h2>AREA:</h2>";
+		echo "Themed: " . $this->Themed . "<br>";
+		echo "Rarity: " . $this->Rarity . "<br>";
+		echo "Discovery: <br>&emsp;" . $this->Discovery . "<br>";
+		echo "Danger: <br>&emsp;" . $this->Danger . "<br>";
 	}
 
 	private function AreaTypeContents(){
@@ -345,30 +351,21 @@ class Dungeon{
 	}
 
 	public function printDungeon(){
-		print "<!DOCTYPE html PUBLIC \"-//IETF//DTD HTML 2.0//EN\">"
-		print "<HTML>"
-		print "\t<HEAD>"
-		print "\t\t<TITLE>" . "Dungeon Generator" . "<TITLE>\n"
-		print "\t\t</HEAD>"
-
-		print "\t\t<BODY>"
-		print "\t\t\t<h1>Dungeon Generator</h1><CR>"
-		print "Size: " . $this->Size . "<CR>";
-		print "Number of themes: " . $this->Number_of_Themes . "<CR>";
-		print "Number of areas: " . $this->Number_of_Areas . "<CR>";
-		print "Builder: " . $this->Builder . "\<CR>";
-		print "Ruination: " . $this->Ruination . "<CR>";
-		print "Themes: " . "<CR>";
+		print "<h1>Dungeon Generator</h1>" . "\n";
+		print "Size: " . $this->Size . "<br>";
+		print "Number of themes: " . $this->Number_of_Themes . "<br>";
+		print "Number of areas: " . $this->Number_of_Areas . "<br>";
+		print "Builder: " . $this->Builder . "<br>";
+		print "Ruination: " . $this->Ruination . "<br>";
+		print "Themes: " . "<br>";
 		
 		foreach($this->Themes as $Theme){
-			print "\t" . $Theme . "<CR>";
+			print "&emsp;" . $Theme . "<br>";
 		}
 
 		foreach($this->Areas as $Area){
 			$Area->Print_Area();
 		}
-		print "\t\t</BODY>"
-		print "</HTML>"
 	}
 }
 
@@ -378,3 +375,5 @@ $MyDungeon->printDungeon();
 //$MyArea = new Area();
 //$MyArea->Print_Area();
 ?>
+</body>
+</html> 
