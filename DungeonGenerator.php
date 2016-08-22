@@ -253,7 +253,6 @@ class Dungeon{
 			$New_Area = new Area();
 			$this->Areas[] = $New_Area;
 		}
-		print_r($this->Areas);
 	}
 
 	private function GenerateThemes(){	
