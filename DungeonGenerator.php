@@ -16,11 +16,11 @@ class Area{
 		$this->MainGenerator();
 	}
 	public function Print_Area(){
-		echo "\nAREA:\n=====\n";
-		echo "Themed: " . $this->Themed . "\n";
-		echo "Rarity: " . $this->Rarity . "\n";
-		echo "Discovery: \n\t" . $this->Discovery . "\n";
-		echo "Danger: \n\t" . $this->Danger . "\n";
+		echo "<CR>AREA:<CR>=====<CR>";
+		echo "Themed: " . $this->Themed . "<CR>";
+		echo "Rarity: " . $this->Rarity . "<CR>";
+		echo "Discovery: \n\t" . $this->Discovery . <CR>";
+		echo "Danger: \n\t" . $this->Danger . "<CR>";
 	}
 
 	private function AreaTypeContents(){
@@ -345,20 +345,30 @@ class Dungeon{
 	}
 
 	public function printDungeon(){
-		print "Size: " . $this->Size . "\n";
-		print "Number of themes: " . $this->Number_of_Themes . "\n";
-		print "Number of areas: " . $this->Number_of_Areas . "\n";
-		print "Builder: " . $this->Builder . "\n";
-		print "Ruination: " . $this->Ruination . "\n";
-		print "Themes: " . "\n";
+		print "<!DOCTYPE html PUBLIC \"-//IETF//DTD HTML 2.0//EN\">"
+		print "<HTML>"
+		print "\t<HEAD>"
+		print "\t\t<TITLE>" . "Dungeon Generator" . "<TITLE>\n"
+		print "\t\t</HEAD>"
+
+		print "\t\t<BODY>"
+		print "\t\t\t<h1>Dungeon Generator</h1><CR>"
+		print "Size: " . $this->Size . "<CR>";
+		print "Number of themes: " . $this->Number_of_Themes . "<CR>";
+		print "Number of areas: " . $this->Number_of_Areas . "<CR>";
+		print "Builder: " . $this->Builder . "\<CR>";
+		print "Ruination: " . $this->Ruination . "<CR>";
+		print "Themes: " . "<CR>";
 		
 		foreach($this->Themes as $Theme){
-			print "\t" . $Theme . "\n";
+			print "\t" . $Theme . "<CR>";
 		}
 
 		foreach($this->Areas as $Area){
 			$Area->Print_Area();
 		}
+		print "\t\t</BODY>"
+		print "</HTML>"
 	}
 }
 
